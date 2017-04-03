@@ -1,0 +1,5 @@
+Vous entrez dans le couloir de droite et avancez peu à peu sur le chemin qui se noie dans l'ombre. Au bout de 5 minutes de marche, vous arrivez dans une salle avec une lumière éblouissante. Un malheureux aventurier est affaissé contre le mur près de l'entrée avec une lampe torche dans la main. Après une inspection de plus près, il semble être mort.
+
+1-Traverser la salle
+2-Chercher la salle
+3-Prendre la lampe torche

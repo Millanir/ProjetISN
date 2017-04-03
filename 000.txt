@@ -1,0 +1,5 @@
+﻿Vous vous réveillez dans une salle abandonnée. Vous vous levez et regardez autour de vous. Vous voyez une porte et sortez. Devant vous se trouve un écran contre le mur et un couloir sombre partant sur la droite et un autre sur la gauche qui est un peu mieux éclairer.
+
+1-Aller à droite
+2-Aller à gauche.
+3-Regarder l'écran

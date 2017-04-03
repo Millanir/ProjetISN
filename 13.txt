@@ -1,0 +1,5 @@
+Vous avez récupéré la lampe torche sur le cadavre.
+
+1-Traverser la salle
+2-Chercher la salle
+3-Revenir sur vos pas

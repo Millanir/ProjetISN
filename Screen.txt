@@ -1,0 +1,6 @@
+Sur l'écran s'affiche un visage qui vous parle: "Bonsoir. Vous êtez ici, sur cette station minière, comme d'autres pour une petite "expérience sociale". Je vous souhaite bonne chance mon ami."
+Et aussitôt l'écran s'éteint.
+
+1-Aller à droite
+2-Aller à gauche
+3-Continuer à regarder l'écran
