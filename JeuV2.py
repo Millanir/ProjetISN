@@ -29,7 +29,7 @@ healthStr ="/"+str(healthMax)
 Objet=[] #Liste de none et de chiffres en fonction si on a ramassé un objet ou pas
 item= 0 #Variable qui change en fonction de la salle
 InvObj= 0
-var=1
+##var=0
 
 
 
@@ -82,6 +82,7 @@ def room0():
     var2= 3
     var3= 1
 
+
 def room1():
     machin(1)
     var1= 4
@@ -93,6 +94,34 @@ def room2():
     var1= 3
     var2= 1
     var3= 2
+
+def screen():
+    machin(3)
+    var1= 1
+    var2= 2
+    var3= 3
+
+def room11():
+    machin(4)
+    var1=1
+    var2=2
+    var3=3
+
+def room12():
+    machin(6)
+    var1=3
+    var2=1
+    var3=2
+
+def room13():
+    machin(7)
+    var1=2
+    var2=3
+    var3=1
+
+
+
+
 
     #Fenêtre Tk
     #Fenêtre principale
@@ -111,7 +140,7 @@ fram1.pack(side=TOP, padx=5)
 can = Frame(fram1, width =350, height =90, bg ='white')
 can.pack(padx =25, pady =20)
 
-Room=[room0,room1,room2]
+Room=[room0,room1,room2,screen,room11,room12,room13]
 
 guppy= open("000.txt",'r', encoding= 'Utf-8')
 cod = guppy.read()
@@ -122,15 +151,15 @@ guppy.close()
 fram2 = Frame(MainFrame,bg="gray",height=300,width=400)
 fram2.pack(side=BOTTOM,padx=25,pady=20)
 
-bou1 = Button(fram2, width=8, text="1",command=choix(var1))
+bou1 = Button(fram2, width=8, text="1",command=lambda: choix(var1))
 bou1.pack()
 bou1.grid(row= 0,column=0)
 
-bou2=Button(fram2,width=8,text="2",command=choix(var2))
+bou2=Button(fram2,width=8,text="2",command=lambda: choix(var2))
 bou2.pack()
 bou2.grid(row=0,column=1)
 
-bou3=Button(fram2,width=8,text='3',command=choix(var3))
+bou3=Button(fram2,width=8,text='3',command=lambda: choix(var3))
 bou3.pack()
 bou3.grid(row=0,column=2)
 
