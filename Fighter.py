@@ -47,7 +47,6 @@ def fighter(lvl):
         tableau.create_text(50, 100, text="Stats Ennemi")
         tableau.create_text(50, 50, text="Vos stats")
 
-
         tableau.create_text(50,65, text= "PV=  {} / {} ".format(health,healthMax))
         tableau.create_text(50,115,text= "PV=  {} / {} ".format(healthE,healthEM))
 
@@ -100,13 +99,16 @@ def fighter(lvl):
     bou2.pack()
     bou2.grid(row=1,column=0)
 
+    def close():
+        ff.after(150, close)
+        if healthE<= 0:
+            ff.destroy()
+        elif health<= 0:
+            ff.destroy()
+        else:
+            pass
+    close()
 
-    if healthE<1:
-        ff.destroy
-        return 1
-    elif health<1:
-        ff.destroy
-        return 0
     ff.mainloop()
 
 
