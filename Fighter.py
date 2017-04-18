@@ -44,11 +44,11 @@ def fighter(lvl):
     def changeStats():
         tableau.delete('all')
 
-        tableau.create_text(165, 10, text="Stats Ennemi")
-        tableau.create_text(75, 10, text="Joueur")
-        tableau.create_text(10, 10, text="Vos stats")
+        tableau.create_text(50, 100, text="Stats Ennemi")
+        tableau.create_text(50, 50, text="Vos stats")
 
-        tableau.create_text(25,25, text= "PV=  {} / ".format(health))
+        tableau.create_text(50,65, text= "PV=  {} / {} ".format(health,healthMax))
+        tableau.create_text(50,115,text= "PV=  {} / {} ".format(healthE,healthEM))
 
 
     def attaque():
@@ -56,15 +56,11 @@ def fighter(lvl):
         test=jeudes()
         if test == 1:
             health=health-3
-            return health
         elif test==3:
             healthE=healthE-3
-            return healthE
         elif test==4:
             healthE=healthE-6
-            return healthE
         changeStats()
-        print("Ello")
 
     def defense():
         global healthE,health
@@ -80,7 +76,6 @@ def fighter(lvl):
         else:
             health=health-5
         changeStats()
-        print("ynaut")
 
 
     ff=Tk()
@@ -93,9 +88,10 @@ def fighter(lvl):
     f2=Frame(sf,height=250,width=250)
     f2.pack(side=LEFT,padx=100,pady=100)
 
-    f3=Frame(sf,height=250,width=250)
+    f3=Frame(sf,height=100,width=200)
     f3.pack(side=RIGHT)
-    tableau = Canvas(f3)
+    tableau = Canvas(f3, height= 180, width=200)
+    tableau.pack()
     bou1=Button(f2,text='Attaquer',command=attaque)
     bou1.pack()
     bou1.grid(row=0,column=0)
@@ -103,31 +99,16 @@ def fighter(lvl):
     bou2.pack()
     bou2.grid(row=1,column=0)
 
-##    f31=Frame(f3)
-##    f31.grid(row=0)
-##    pv=Message(f31,text="PV=")
-##    pv.grid(row=0,column=0)
-##    pv1=Message(f31,text=health)
-##    pv1.grid(row=0,column=1)
-##    pv2=Message(f31,text=healthStr)
-##    pv2.grid(row=0,column=2)
-##    n=Message(f31,text="   ")
-##    n.grid(row=1)
-##    ste=Message(f3,text="Stat ennemi")
-##    ste.grid (row=1,column=0)
-##    pva=Message(f3,text="PV=")
-##    pva.grid(row=2,column=0)
-##    pva1=Message(f3,text=healthE)
-##    pva1.grid(row=2,column=1)
-##    pva2=Message(f3,text=healthEstr)
-##    pva2.grid(row=2,column=3)
+    def close():
+        ff.after(150, close)
+        if healthE<= 0:
+            ff.destroy()
+        elif health<= 0:
+            ff.destroy()
+        else:
+            pass
+    close()
 
-    if healthE<1:
-        ff.destroy
-        return 1
-    elif health<1:
-        ff.destroy
-        return 0
     ff.mainloop()
 
 
