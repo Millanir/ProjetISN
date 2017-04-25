@@ -7,13 +7,8 @@ from random import randint
     #Liste de textes à lire
 History=["000.txt","1.txt","2.txt","Screen.txt","11.txt","21.txt","12.txt","13.txt","22.txt"] ##Listes dans des listes?
 HistImg=["concept_corpus.gif","Screen.gif"]
-
-#Change la liste History en fonction du numéro
-number=0
-
-    #numéro de la salle
 salle=0
-choiSal=[] #Liste de liste pour changer de salle
+
 
     #Définit les stats
 healthMax= randint(15,25)
@@ -27,36 +22,31 @@ healthStr ="/"+str(healthMax)
 
 
 Objet=[] #Liste de none et de chiffres en fonction si on a ramassé un objet ou pas
-item= 0 #Variable qui change en fonction de la salle
-InvObj= 0
-##var=0
-
-
-
-for i in range(0,10):
-    Objet[i]= Objet.append(i)
-
-def addObj():                   #Ajoute un objet à l'inventaire en fonction de la salle
-    global item, Objet
-    Objet[item] =1
+##item= 0 #Variable qui change en fonction de la salle
+##InvObj= 0
+##
+##
+##
+##for i in range(0,10):
+##    Objet[i]= Objet.append(i)
 
 
 def Inventory():                #Ouvre la fenêtre Inventaire
+    global framinv
+    def refresh():
+        fenInv.after(200,refresh)
+        framinv.delete('all')
+        framinv.create_text(25,25,text= Objet[item])
+
     fenInv = Tk()
     fenInv.title("Inventaire")
     fenInv.geometry("350x200")
-    framinv = Frame(fenInv)
-    def InvObj():
-        framinv.destroy()
-        if Objet[2] ==1:
-            obj1= Message(framinv,text= "item quelconque",fg='black',width= "250")
-            obj1.pack()
-        if Objet[1] ==1:
-            obj2= Message(framinv,text= "Lampe torche",width= "250")
-            obj2.pack()
-    boutan = Button(fenInv,width=8,text="Actualiser",command=InvObj)
-    boutan.pack(side=BOTTOM)
+    framinv= Canvas(fenInv)
+
+
+    refresh()
     fenInv.mainloop()
+
 
 #Change le texte et change les variables pour pouvoir avancer dans l'histoire
 var1=1
@@ -77,6 +67,7 @@ def machin(var):
     tex4.pack()
 
 def room0():
+    global var1,var2,var3
     machin(0)
     var1= 2
     var2= 3
@@ -84,40 +75,47 @@ def room0():
 
 
 def room1():
+    global var1,var2,var3
     machin(1)
     var1= 4
     var2= 5
     var3= 6
 
 def room2():
+    global var1,var2,var3
     machin(2)
     var1= 3
     var2= 1
     var3= 2
 
 def screen():
+    global var1,var2,var3
     machin(3)
     var1= 1
     var2= 2
     var3= 3
 
 def room11():
+    global var1,var2,var3
     machin(4)
     var1=1
     var2=2
     var3=3
 
 def room12():
+    global var1,var2,var3
     machin(6)
     var1=3
     var2=1
     var3=2
 
 def room13():
+    global var1,var2,var3,item
     machin(7)
     var1=2
     var2=3
     var3=1
+    item= 0
 
 
 
@@ -200,9 +198,6 @@ canimg = Canvas(fen1, width =300, height =250, bg ='white')
 canimg.pack(side=RIGHT,padx=25,pady=20)
 photo = PhotoImage(file =HistImg[salle])
 item = canimg.create_image(150, 100, image =photo)
-
-
-
 
 
 
